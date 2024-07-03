@@ -1,11 +1,12 @@
 export default function groceriesList() {
-  const values = [
+  const arr = [
     ['Apples', 10],
     ['Tomatoes', 10],
     ['Pasta', 1],
     ['Rice', 1],
     ['Banana', 5],
   ];
-
-  return new Map(values);
+  const m = new Map();
+  for (const a of arr) m.set(a[0], a[1]);
+  return m;
 }
