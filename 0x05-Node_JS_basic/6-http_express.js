@@ -1,14 +1,14 @@
 const express = require('express');
 
 const app = express();
-const PORT = 1245;
+const port = 1245;
 
-app.get('/', (_, res) => {
+// eslint-disable-next-line jest/require-hook
+app.get('/', (_req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on PORT ${PORT}`);
-});
+// eslint-disable-next-line jest/require-hook
+app.listen(port);
 
 module.exports = app;
