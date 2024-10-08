@@ -1,5 +1,12 @@
-module.exports = class AppController {
-  static getHomepage (request, response) {
+/**
+ * Contains the miscellaneous route handlers.
+ * @author <https://github.com/FoubaDev>
+ */
+class AppController {
+  static getHomepage(request, response) {
     response.status(200).send('Hello Holberton School!');
   }
-};
+}
+
+export default AppController;
+module.exports = AppController;

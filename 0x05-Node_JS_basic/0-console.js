@@ -1,4 +1,10 @@
-// A function that prints in STDOUT the string "Hello World"
-const displayMessage = (message) => console.log(message);
+/**
+ * Displays a message on the STDOUT.
+ * @param {String} msg The message to display.
+ * @author <https://github.com/FoubaDev>
+ */
+const displayMessage = (msg) => {
+  console.log(msg);
+};
 
 module.exports = displayMessage;
