@@ -1,12 +1,16 @@
+/**
+ * Creates a buffer array with a given position set to a given value.
+ * @param {Number} length - The length of the buffer.
+ * @param {Number} position - The position to modify.
+ * @param {Number} value - The value to be stored in the position.
+ * @author <https://github.com/FoubaDev>
+ * @returns {DataView}
+ */
 export default function createInt8TypedArray(length, position, value) {
-  const lenArray = length - 1;
-  const buffer = new ArrayBuffer(length);
-  const view = new Int8Array(buffer);
-
-  if (position > lenArray) {
-    throw Error('Position outside range');
+  if (position >= length) {
+    throw new Error('Position outside range');
   }
-  view[position] = value;
-  const dataView = new DataView(buffer);
-  return dataView;
+  const buf = new DataView(new ArrayBuffer(length), 0, length);
+  buf.setInt8(position, value);
+  return buf;
 }

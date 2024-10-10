@@ -1,6 +1,25 @@
+/**
+ * Joins a set of strings with a dash after stripping the strings of
+ * a leading sub string.
+ * @param {Set<String>} set - A collection of strings.
+ * @param {String} startString - The string to strip from the beginning
+ * of each item in the set.
+ * @author <https://github.com/FoubaDev>
+ * @returns {String}
+ */
 export default function cleanSet(set, startString) {
-  let res = '';
-  if (!startString || !startString.length) return res;
-  for (const el of set) { if (el && el.startsWith(startString)) res += `${el.slice(startString.length)}-`; }
-  return res.slice(0, res.length - 1);
+  const parts = [];
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
+    return '';
+  }
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
+
+      if (valueSubStr && valueSubStr !== value) {
+        parts.push(valueSubStr);
+      }
+    }
+  }
+  return parts.join('-');
 }

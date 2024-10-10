@@ -1,4 +1,10 @@
+/**
+ * Checks if a set contains each element in an array.
+ * @param {Set} set - The collection of unique items.
+ * @param {*} array - The array of items.
+ * @author <https://github.com/FoubaDev>
+ * @returns {Boolean}
+ */
 export default function hasValuesFromArray(set, array) {
-  for (const i of array) if (!set.has(i)) return false;
-  return true;
+  return array.every((value) => set.has(value));
 }

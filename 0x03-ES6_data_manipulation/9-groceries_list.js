@@ -1,12 +1,15 @@
+/**
+ * Retrieves a map of grocery names and their quantity.
+ * @author <https://github.com/FoubaDev>
+ * @returns {Map<string, Number>}
+ */
 export default function groceriesList() {
-  const arr = [
+  const values = [
     ['Apples', 10],
     ['Tomatoes', 10],
     ['Pasta', 1],
     ['Rice', 1],
     ['Banana', 5],
   ];
-  const m = new Map();
-  for (const a of arr) m.set(a[0], a[1]);
-  return m;
+  return new Map(values);
 }
